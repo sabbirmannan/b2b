@@ -1,0 +1,202 @@
+﻿@model IEnumerable<PackageBD.Areas.Supplier.Models.TourPackage>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TourPackageTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Highlights)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InclusionExclusion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TourDestination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpecialNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TourCostPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TourSalesPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TourDiscountPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalNights)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelStar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelInUse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayWiseItienary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TearmsAndConditions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Allotment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adults)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Childrens)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValidityDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayThree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayFour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayFive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DaySix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DaySeven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayEight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayNine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayTen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TourPackageTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Highlights)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InclusionExclusion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TourDestination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpecialNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TourCostPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TourSalesPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TourDiscountPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalNights)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelStar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelInUse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayWiseItienary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TearmsAndConditions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Allotment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adults)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Childrens)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValidityDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayThree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayFour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayFive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DaySix)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DaySeven)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayEight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayNine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayTen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TourPackageID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TourPackageID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TourPackageID })
+        </td>
+    </tr>
+}
+
+</table>

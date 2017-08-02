@@ -217,6 +217,7 @@
     <Compile Include="Areas\Supplier\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Supplier\Controllers\SupplierInfoesController.cs" />
     <Compile Include="Areas\Supplier\Controllers\TourPackagesController.cs" />
+    <Compile Include="Areas\Supplier\Controllers\TourPackages___Controller.cs" />
     <Compile Include="Areas\Supplier\Models\FileDetail.cs" />
     <Compile Include="Areas\Supplier\Models\SupplierInfo.cs" />
     <Compile Include="Areas\Supplier\Models\TourPackage.cs" />
@@ -232,6 +233,22 @@
     <Compile Include="Migrations\201708010336512_v1.cs" />
     <Compile Include="Migrations\201708010336512_v1.Designer.cs">
       <DependentUpon>201708010336512_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020730248_modify_tpack_entities.cs" />
+    <Compile Include="Migrations\201708020730248_modify_tpack_entities.Designer.cs">
+      <DependentUpon>201708020730248_modify_tpack_entities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020739224_v11.cs" />
+    <Compile Include="Migrations\201708020739224_v11.Designer.cs">
+      <DependentUpon>201708020739224_v11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020745196_v2.cs" />
+    <Compile Include="Migrations\201708020745196_v2.Designer.cs">
+      <DependentUpon>201708020745196_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708021004177_v3.cs" />
+    <Compile Include="Migrations\201708021004177_v3.Designer.cs">
+      <DependentUpon>201708021004177_v3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -872,6 +889,11 @@
     <Content Include="Areas\Admin\Views\Suppliers\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Suppliers\NewRegisters.cshtml" />
     <Content Include="Areas\Agent\Views\Home\TourPackageDetails.cshtml" />
+    <Content Include="Areas\Supplier\Views\TourPackages___\Create.cshtml" />
+    <Content Include="Areas\Supplier\Views\TourPackages___\Delete.cshtml" />
+    <Content Include="Areas\Supplier\Views\TourPackages___\Details.cshtml" />
+    <Content Include="Areas\Supplier\Views\TourPackages___\Edit.cshtml" />
+    <Content Include="Areas\Supplier\Views\TourPackages___\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -956,6 +978,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708010336512_v1.resx">
       <DependentUpon>201708010336512_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020730248_modify_tpack_entities.resx">
+      <DependentUpon>201708020730248_modify_tpack_entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020739224_v11.resx">
+      <DependentUpon>201708020739224_v11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020745196_v2.resx">
+      <DependentUpon>201708020745196_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708021004177_v3.resx">
+      <DependentUpon>201708021004177_v3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

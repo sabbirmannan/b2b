@@ -48,7 +48,7 @@ namespace PackageBD.Areas.Supplier.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "TourPackageID,TourPackageTitle,TourPrice,TourDiscountPrice,TotalNights,Itinerary,Facilities,TearmsAndConditions,FAQ,Available,HotelName,TourDestination,HotelStar,Adults,Childrens,CreatedOn,DepartingDate,ExpiryDate,SuplierInfoId")] TourPackage tourPackage)
+        public async Task<ActionResult> Create([Bind(Include = "TourPackageID,TourPackageTitle,Highlights,InclusionExclusion,TourDestination,SpecialNotes,TourCostPrice,TourSalesPrice,TourDiscountPrice,TotalNights,HotelStar,HotelInUse,DayWiseItienary,TearmsAndConditions,Allotment,Adults,Childrens,CreatedOn,DepartingDate,ValidityDate,DayOne,DayTwo,DayThree,DayFour,DayFive,DaySix,DaySeven,DayEight,DayNine,DayTen")] TourPackage tourPackage)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace PackageBD.Areas.Supplier.Controllers
         // POST: Supplier/TourPackages/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "TourPackageID,TourPackageTitle,TourPrice,TourDiscountPrice,TotalNights,Itinerary,Facilities,TearmsAndConditions,FAQ,Available,HotelName,TourDestination,HotelStar,Adults,Childrens,DepartingDate,ExpiryDate")] TourPackage tourPackage)
+        public async Task<ActionResult> Edit([Bind(Include = "TourPackageID,TourPackageTitle,Highlights,InclusionExclusion,TourDestination,SpecialNotes,TourCostPrice,TourSalesPrice,TourDiscountPrice,TotalNights,HotelStar,HotelInUse,DayWiseItienary,TearmsAndConditions,Allotment,Adults,Childrens,CreatedOn,DepartingDate,ValidityDate,DayOne,DayTwo,DayThree,DayFour,DayFive,DaySix,DaySeven,DayEight,DayNine,DayTen")] TourPackage tourPackage)
         {
             if (ModelState.IsValid)
             {
