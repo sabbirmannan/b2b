@@ -5,19 +5,49 @@
 }
 <br />
 <br />
-<div class="container">
-    <div class="col-sm-12">
-        <a href="@Url.Action("Index","Home",new { area="Agent"})">Back to list</a>
-        <div class="col-sm-8">
-            @foreach (var f in Model.TourPackage.FileDetails)
-            {
-                <div class="well">
-                    <img src="~/Images/packageImg/@(f.FileDetailsId+f.Extension)"width="100%;" class="">
+<!-- banner-bottom -->
+<div class="banner-bottom">
+    <!-- container -->
+    <div class="container">
+        <div class="faqs-top-grids">
+            <!--single-page-->
+            <div class="single-page">
+                <h2 class="text-center">@Html.DisplayFor(model => model.TourPackage.TourPackageTitle)</h2>
+                <div class="col-md-8 single-gd-lt">
+                    @foreach (var f in Model.TourPackage.FileDetails)
+                    {
+                        <div class="">
+                            <img src="~/Images/packageImg/@(f.FileDetailsId+f.Extension)" width="100%;" class="">
+                        </div>
+                    }
+
+                    <hr />
+                    <!--tab pane-->
+                    
+                    <!--tab pane-->
+
                 </div>
-            }
+                <div class="col-md-4 single-gd-rt">
+                    <div class="spl-btn">
+                        <div class="spl-btn-bor">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                            </a>
+                            <p>Booking</p>
+                        </div>
+                        <div class="sp-bor-btn text-right">
+                            <h4 class="text-center text-capitalize">@Html.DisplayFor(model => model.TourPackage.TourSalesPrice)</h4>
+                            <p class="best-pri">Best price</p>
+                            <a class="best-btn" href="booking.html">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!--//single-page-->
         </div>
-        <div class="col-sm-4">
-            <h2>@Html.DisplayFor(model => model.TourPackage.TourPackageTitle)</h2>
-        </div>
+        
     </div>
+    <!-- //container -->
 </div>
+<!-- //banner-bottom -->
