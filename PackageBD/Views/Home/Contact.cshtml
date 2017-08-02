@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+	<!-- banner-bottom -->
+<div class="banner-bottom">
+    <!-- container -->
+    <div class="container">
+        <div class="about-info">
+            <h2>Contact Us</h2>
+        </div>
+
+        
+        <div class="faqs-top-grids">
+            <div class="contact-info">
+                <h4>Miscellaneous Information</h4>
+                <p>
+                    Packagebd.com is an award winning B2B global reservation system offering accommodation, 
+                    sightseeing and transfer services to our travel partners across the globe. The system 
+                    provides access to over 250,000+ hotel and apartment rooms worldwide, more than 
+                    45,000+ sightseeing attractions and private transfer in over 900 cities, exclusively 
+                    to professionals within the tourism sector: travel agents, tour operators and wholesale 
+                    travel companies, with large allotments and instant online confirmation.
+                </p>
+            </div>
+            <div class="contact-grids">
+                <div class="col-md-7 contact-para">
+                    <h5>Contact Form</h5>
+                    <form>
+                        <div class="grid-contact">
+                            <div class="col-md-6 contact-grid">
+                                <p>First Name</p>
+                                <input type="text" id="txtFn" name="txtFn" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+                            </div>
+                            <div class="col-md-6 contact-grid">
+                                <p>Last Name</p>
+                                <input type="text" id="txtLn" name="txtLn" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="grid-contact">
+                            <div class="col-md-6 contact-grid">
+                                <p>Email</p>
+                                <input type="text" id="txtEmail" name="txtEmail" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+                            </div>
+                            <div class="col-md-6 contact-grid">
+                                <p>Phone</p>
+                                <input type="text" id="txtPhone" name="txtPhone" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <p class="your-para">Message</p>
+                        <textarea cols="77" rows="6" value="" onfocus="this.value='';" id="txtQuery" name="txtQuery" onblur="if (this.value == '') {this.value = '';}"></textarea>
+                        <div class="send">
+                            <input type="submit" value="Send" onclick="return ContactMsg();">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5 contact-map">
+                    <h5>Loaction</h5>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d59247.84555941436!2d-74.00101359585908!3d40.691888370076846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1440747755360" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //container -->
+</div>
+<!-- //banner-bottom -->
+
+<script>
+    /// <reference path="jquery-1.9.1.intellisense.js" />
+    //Load Data in Table when documents is ready
+    //$(document).ready(function () {
+    //    loadData();
+    //});
+
+    //Add Data Function
+    function ContactMsg() {
+        var res = validate();
+        if (res == false) {
+            return false;
+        }
+        var contactObj = {
+            FirstName: $('#txtFn').val(),
+            LastName: $('#txtLn').val(),
+            Email: $('#txtEmail').val(),
+            Phone: $('#txtPhone').val(),
+            Queries: $('#txtQuery').val()
+        };
+        $.ajax({
+            url: "/Home/SendQuery",
+            data: JSON.stringify(contactObj),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                //$('#myModal').modal('show');
+                //$('#msg').html('Successfully Submitted');
+                message();
+            },
+            error: function (errormessage) {
+                //alert(errormessage.responseText);
+                $('#msg').html('Erorr');
+            }
+        });
+    }
+
+    function message() {
+        alert("Success!!");
+    }
+
+
+    //Function for clearing the textboxes
+    function clearTextBox() {
+        $('#txtFn').val("");
+        $('#txtLn').val("");
+        $('#txtEmail').val("");
+        $('#txtPhone').val("");
+        $('#txtQuery').val("");
+        
+    }
+    //Valdidation using jquery
+    function validate() {
+        var isValid = true;
+        if ($('#txtFn').val().trim() == "") {
+            $('#txtFn').css('border-color', 'Red');
+            isValid = false;
+        }
+        else {
+            $('#txtFn').css('border-color', 'lightgrey');
+        }
+        if ($('#txtLn').val().trim() == "") {
+            $('#txtLn').css('border-color', 'Red');
+            isValid = false;
+        }
+        else {
+            $('#txtLn').css('border-color', 'lightgrey');
+        }
+        if ($('#txtEmail').val().trim() == "") {
+            $('#txtEmail').css('border-color', 'Red');
+            isValid = false;
+        }
+        else {
+            $('#txtEmail').css('border-color', 'lightgrey');
+        }
+        if ($('#txtPhone').val().trim() == "") {
+            $('#txtPhone').css('border-color', 'Red');
+            isValid = false;
+        }
+        else {
+            $('#txtPhone').css('border-color', 'lightgrey');
+        }
+        if ($('#txtQuery').val().trim() == "") {
+            $('#txtQuery').css('border-color', 'Red');
+            isValid = false;
+        }
+        else {
+            $('#txtQuery').css('border-color', 'lightgrey');
+        }
+        return isValid;
+    }
+</script>

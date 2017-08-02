@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "Home";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--header-->
+
+<!--//header-->
+
+<!-- banner -->
+<div class="banner">
+    <!-- container -->
+    <div class="container">
+        @*<div class="col-md-4 banner-left">
+            <section class="slider2">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <div class="slider-info">
+                                <img src="~/Front_End/images/1.jpg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slider-info">
+                                <img src="~/Front_End/images/2.jpg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slider-info">
+                                <img src="~/Front_End/images/3.jpg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slider-info">
+                                <img src="~/Front_End/images/4.jpg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slider-info">
+                                <img src="~/Front_End/images/2.jpg" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            FlexSlider
+        </div>*@
+        <div class="col-sm-8"></div>
+        <div class="col-md-4 banner-right">
+            <div class="sap_tabs">
+                <div class="booking-info text-center">
+                    <h2>Access Area</h2>
+                </div>
+                <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                    <ul class="resp-tabs-list">
+                        <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Agent Login</span></li>
+                        <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Supplier Login</span></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                    <!---->
+                    <div class="resp-tabs-container">
+                        <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                            <div class="facts">
+                                <div class="booking-form">
+                                    <div class="container-fluid">
+                                        <form action="">
+                                            <div class="form-group">
+                                                <label for="email">Agent Code:</label>
+                                                <input type="text" class="form-control" id="agentCode" placeholder="Agent Code" name="agentCode">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">User Name:</label>
+                                                <input type="text" class="form-control" id="userName" placeholder="User Name" name="userName">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pwd">Password:</label>
+                                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                                            </div>
+                                            <div class="checkbox" style="color:#00ff21">
+                                                <label><input type="checkbox" name="remember"> Remember me</label>
+                                                <label><a href="">Forgot Password?</a></label>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <a href="@Url.Action("SearchHotel","Hotel",new { area="Agent"})" class="btn btn-success">
+                                                        <i class="glyphicon glyphicon-log-in"></i>  Login
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <a href="@Url.Action("AgentRegistration","Account",new { area=""})" class="btn btn-primary"><i class="glyphicon glyphicon-user"></i>  Agent Registration</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
+                            <div class="facts">
+                                <div class="booking-form">
+                                    <div class="container-fluid">
+                                        <form action="">
+                                            <div class="form-group">
+                                                <label for="email">Supplier Code:</label>
+                                                <input type="text" class="form-control" id="supplierCode" placeholder="Supplier Code" name="supplierCode">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">User Name:</label>
+                                                <input type="text" class="form-control" id="userName" placeholder="User Name" name="userName">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pwd">Password:</label>
+                                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                                            </div>
+                                            <div class="checkbox" style="color:#00ff21">
+                                                <label><input type="checkbox" name="remember"> Remember me</label>
+                                                <label><a href="">Forgot Password?</a></label>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-log-in"></i>  Login</button>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <a href="@Url.Action("SupplierRegistration","Account",new { area=""})" class="btn btn-primary"><i class="glyphicon glyphicon-user"></i>  Supplier Registration</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!-- //container -->
+</div>
+<!-- //banner -->
+<div class="move-text">
+    <div class="marquee">PackageBD Under Construction</div>
+    <script type="text/javascript" src="~/Front_End/js/jquery.marquee.min.js"></script>
+    <script>
+            $('.marquee').marquee({ pauseOnHover: true });
+            //sourceURL=pen.js
+    </script>
+</div>
+

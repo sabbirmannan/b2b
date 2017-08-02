@@ -1,0 +1,333 @@
+﻿@model PackageBD.Models.RegisterViewModel_Agent
+@{
+    ViewBag.Title = "Agent Registation";
+}
+
+<style>
+    .supdetails{
+        margin:0px;
+    }
+    .regtitle{
+        margin-bottom:10px;
+        text-align:center;
+    }
+    #agentregform .glyphicon{
+        color:#213687
+    }
+</style>
+
+
+<div id="agentregform" class="container" style="background-color:#f8f6c8; padding:20px;">
+    @using (Html.BeginForm("AgentRegistration", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="row">
+        <h2 class="text-center"><b>Agent Registration Form</b></h2>
+        <hr />
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="container-fluid supdetails">
+                <div class="regtitle">
+                    <h2 class="btn btn-info"><span>Agent Details</span></h2>
+                </div>
+                @*<hr />*@
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.AgencyName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Agency Name" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.AgencyName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                        @Html.EditorFor(model => model.AgencyEmail, new { htmlAttributes = new { @class = "form-control", @placeholder = "Agency Email" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.AgencyEmail, "", new { @class = "text-danger" })
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name" } })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name" } })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-cog"></i></span>
+                        @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control", @placeholder = "Designation" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        @Html.EnumDropDownListFor(model => model.NatureOfBusiness, "-- Nature Of Business --", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.NatureOfBusiness, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        @Html.EnumDropDownListFor(model => model.BusinessType, "-- Business Type --", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.BusinessType, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        @Html.EnumDropDownListFor(model => model.HearBy, "-- You heared about packagebd.com by --", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.HearBy, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        @Html.EnumDropDownListFor(model => model.PreferredCurrency, "--Preferred Currency--", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.PreferredCurrency, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Address" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-cog"></i></span>
+                        @Html.EditorFor(model => model.PostCode, new { htmlAttributes = new { @class = "form-control", @placeholder = "Pincode/Zipcode/Postcode" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.PostCode, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+                        @Html.EditorFor(model => model.Telephone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Telephone" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Telephone, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                        @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mobile" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-cog"></i></span>
+                        @Html.EditorFor(model => model.Fax, new { htmlAttributes = new { @class = "form-control", @placeholder = "Fax" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Fax, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                        @Html.DropDownList("CountryId", null,"-- Select Country --", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.CountryId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-stats"></i></span>
+                        @Html.DropDownList("CityID", null, "-- Select City --", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.CityID, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-euro"></i></span>
+                        @Html.EnumDropDownListFor(model => model.TimeZone, "--Select Time Zone--", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.TimeZone, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                        @Html.EditorFor(model => model.Website, new { htmlAttributes = new { @class = "form-control", @placeholder = "Website" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Website, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-upload"></i></span>
+                        @*@Html.EditorFor(model => model.LogoPath, new { htmlAttributes = new { @class = "form-control", @placeholder = "Website" } })*@
+                        <input type="file" name="logo" class="form-control" />
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Website, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="container-fluid">
+                <!--User access details -->
+                <div class="regtitle">
+                    <h2 class="btn btn-info"><span>Access Details</span></h2>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-log-in"></i></span>
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Username" } })
+                    </div>
+                    @*@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })*@
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Confirm password" })
+                    </div>
+                </div>
+                <!--user access-->
+
+                <!--contact details-->
+                <div class="regtitle">
+                    <h2 class="btn btn-info"><span>Contact Details</span></h2>
+                </div>
+
+                <div class="text-center">
+                    <h2 class="label-info">Accounts</h2>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.AccountsName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Accounts Name" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.AccountsName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.AccountsEmail, new { htmlAttributes = new { @class = "form-control", @placeholder = "Accounts Email" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.AccountsEmail, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.AccountsNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Accounts Number" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.AccountsNumber, "", new { @class = "text-danger" })
+                </div>
+
+                <!--reservation details-->
+                <div class="text-center">
+                    <h2 class="label-info">Reservation</h2>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.ReservationName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Reservation Name" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ReservationName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.ReservationEmail, new { htmlAttributes = new { @class = "form-control", @placeholder = "Reservation Email" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ReservationEmail, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.ReservationNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Reservation Number" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ReservationNumber, "", new { @class = "text-danger" })
+                </div>
+                <!--reservation details-->
+
+                <!--management details-->
+                <div class="text-center">
+                    <h2 class="label-info">Management</h2>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.ManagementName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Management Name" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ManagementName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.ManagementEmail, new { htmlAttributes = new { @class = "form-control", @placeholder = "Management Email" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ManagementEmail, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        @Html.EditorFor(model => model.ManagementNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Management Number" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ManagementNumber, "", new { @class = "text-danger" })
+                </div>          
+            </div>
+                <!--contact details-->
+
+                <!--validation summary-->
+                <hr />
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <hr />
+
+
+                <div class="btn-group col-sm-offset-2">
+                    <div class="btn btn-default">
+                        <input type="submit" value="Register" class="btn btn-success" />
+                    </div>
+                    <div class="btn btn-default">
+                        <a href="@Url.Action("Index","Home",new { area=""})" class="btn btn-default"><i class="glyphicon glyphicon-log-in"></i>&nbsp; Already Member?</a>
+                    </div>
+                    <div class="btn btn-default">
+                        <a href="@Url.Action("Index","Home",new { area=""})" class="btn btn-danger">Cancel</a>
+                    </div>
+                </div>
+
+            </div>         
+        </div>  
+    }
+</div>
+
+<!--jquery validate input form-->
+
+<!--jquery validate input form-->
+
+

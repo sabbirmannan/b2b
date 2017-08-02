@@ -1,0 +1,227 @@
+﻿@model PackageBD.Areas.Agent.Models.AgentInfo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AgentInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentUser.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City_ag.CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City_ag.CityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.CountryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country.CountryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgentCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgentCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgencyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgencyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgencyEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgencyEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IATAStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IATAStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NatureOfBusiness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NatureOfBusiness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusinessType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusinessType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HearBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HearBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreferredCurrency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreferredCurrency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeZone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeZone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AgentInfoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

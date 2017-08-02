@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PackageBD | @ViewBag.title</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> 
+        <!--bootstrap dataTable-->
+        <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    @Styles.Render("~/BackEnd/css/backendCss")
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--header partial view-->
+        @*@Html.Partial("_HeaderPartial")*@
+        @{ 
+            Html.RenderPartial("_DashboardHeaderPartial");
+        }
+        @*@RenderPage("_HeaderPartial.cshtml")*@
+        <!--header partial view-->
+
+        <!-- Left side column. contains the logo and sidebar -->
+        @Html.Partial("_DashboardLeftNavPartial")
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Dashboard
+                    <small>PackageBD</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Dashboard</li>
+                </ol>
+            </section>
+            <!-- Main content -->
+            
+            <section class="content">
+                @RenderBody()
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Developed By : </b> Wali Ullah
+            </div>
+            <strong>Copyright &copy; 2017-@DateTime.Now.Year <a href="#">Packagebd.com</a>.</strong> All rights reserved.
+        </footer>
+
+        <!-- Control Sidebar -->
+        @Html.Partial("_DashboardControlSidePartial")
+        <!-- /.control-sidebar -->
+        
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+
+
+    <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/BackEnd/js/adminJsBundle")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script src="~/BackEnd/js/custom/product.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#datatable').dataTable();
+        $("[data-toggle=tooltip]").tooltip();
+
+        //product input validate
+        ProductInputValidate();
+        //category casecading 
+        //CategoryCasecadingDropDown();
+
+    });
+</script>

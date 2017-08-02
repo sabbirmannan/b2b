@@ -1,0 +1,471 @@
+﻿@model PackageBD.Models.TourPackageSearchModel
+@using PagedList.Mvc;
+@using System.Globalization
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    CultureInfo bdt = new CultureInfo("bn-BD");
+}
+
+<div class="container">
+
+    @*@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        @Html.ValidationSummary(false)
+        <div style="border-bottom:1px solid #bbb"><h1>Search Package</h1></div>
+        <table style="border:0px; width:500px;">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Destination)
+                    </div>
+
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Destination)
+                        @Html.ValidationMessageFor(model => model.Destination)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Nights)
+                    </div>
+
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Nights)
+                        @Html.ValidationMessageFor(model => model.Nights)
+                    </div>
+                </td>
+                <td style="vertical-align:bottom;">
+                    <input name="SearchButton" type="submit" value="Search" />
+                </td>
+            </tr>
+        </table>
+    }*@
+
+    @*@if (Model.SearchResults != null && Model.SearchResults.Count > 0)
+    {
+        <table class="table" style="width:500px;">
+            <tr>
+                <th>ID</th>
+                <th>Package Title</th>
+                <th>Destination</th>
+                <th>Price</th>
+                <th>Total Nights</th>
+            </tr>
+            @foreach (var item in Model.SearchResults)
+            {
+                <tr>
+                    <td>@item.TourPackageID</td>
+                    <td>@item.TourPackageTitle</td>
+                    <td>@item.TourDestination</td>
+                    <td>@item.TourPrice</td>
+                    <td>@item.TotalNights</td>
+                </tr>
+            }
+        </table>
+        @Html.PagedListPager(Model.SearchResults, page => Url.Action("Index", new RouteValueDictionary()
+        {
+               { "Page", page },
+               { "Destination", Model.Destination },
+               { "Price", Model.Price },
+               { "Nights", Model.Nights }
+
+        }),
+        PagedListRenderOptions.PageNumbersOnly)
+    }*@
+</div>
+
+
+<!--design-->
+<!-- banner -->
+<div class="banner hotels-banner">
+    <!-- container -->
+    <div class="container">
+        <div class="col-md-12">
+            <div class="sap_tabs">
+                <div class="booking-info about-booking-info">
+                    <h2>Book International Packages</h2>
+                </div>
+                <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                    <!---->
+                    <div class="facts about-facts train-facts">
+                        <div class="booking-form train-form">
+                            <link rel="stylesheet" href="css/jquery-ui.css" />
+                            <!-- Set here the key for your domain in order to hide the watermark on the web server -->
+
+                            <div class="online_reservation">
+                                <div class="b_room">
+                                    <div class="booking_room">
+                                        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+                                        {
+                                            @Html.ValidationSummary(false)
+                                            <table style="border:0px; width:100%;">
+                                                <tr>
+                                                    <td>
+                                                        <div class="reservation">
+                                                            <ul>
+                                                                <li class="span1_of_1 desti about-desti">
+                                                                    <h5>Destination</h5>
+                                                                    <div class="book_date">
+                                                                        <form>
+                                                                            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                                                                            @Html.EditorFor(model => model.Destination, new { htmlAttributes = new { @class = "typeahead1 input-md form-control tt-input" } })
+                                                                        </form>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="reservation" style="width:30%;">
+                                                            <ul>
+                                                                <li class="span1_of_1 desti about-desti">
+                                                                    <h5>Nights</h5>
+                                                                    <div class="book_date">
+                                                                        <form>
+                                                                            @Html.EditorFor(model => model.Nights, new { htmlAttributes = new { @class = "typeahead1 input-md form-control tt-input",@placeholder="e.g.: ,3,7,10" } })
+                                                                        </form>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="reservation">
+                                                            <ul>
+                                                                <li class="span1_of_3">
+                                                                    <div class="date_btn">
+                                                                        <input name="SearchButton" type="submit" value="Search" class="form-control btn btn-success" />
+                                                                    </div>
+                                                                </li>
+                                                                <div class="clearfix"></div>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        }
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!-- //container -->
+</div>
+<!-- //banner -->
+
+<br />
+<hr />
+
+
+@*-----*@
+<!-- banner-bottom -->
+<div class="banner-bottom">
+    <!-- container -->
+    <div class="container">
+        <div class="faqs-top-grids">
+            <div class="product-grids">
+                <div class="col-md-3 product-left">
+                    <div class="h-class">
+                        <h5>Package Class</h5>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="checkbox">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="starTextLabel">5 Stars (18)</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="checkbox" checked="checked" data-track="HOT:SR:StarRating:5Star">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="starTextLabel">4 Stars (30)</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="checkbox">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="starTextLabel">3 Stars (106)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="h-class">
+                        <h5>Area</h5>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="radio" name="hideRegionId" checked="checked" data-track="HOT:SR:Area">
+                                <span class="p-day-grid">London</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="radio" name="hideRegionId" data-track="HOT:SR:Area">
+                                <span class="p-day-grid">Newyork</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="radio" name="hideRegionId" data-track="HOT:SR:Area">
+                                <span class="p-day-grid">New Zealand</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="radio" name="hideRegionId" data-track="HOT:SR:Area">
+                                <span class="p-day-grid">Los Angeles</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="radio" name="hideRegionId" data-track="HOT:SR:Area">
+                                <span class="p-day-grid">Sydney</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="radio" name="hideRegionId" data-track="HOT:SR:Area">
+                                <span class="p-day-grid">Agra</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="radio" name="hideRegionId" data-track="HOT:SR:Area">
+                                <span class="p-day-grid">Greece</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="radio" name="hideRegionId" data-track="HOT:SR:Area">
+                                <span class="p-day-grid">Singapore</span>
+                            </label>
+                        </div>
+                        <div class="hotel-price">
+                            <label class="check">
+                                <input type="radio" name="hideRegionId" data-track="HOT:SR:Area">
+                                <span class="p-day-grid">Paris</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9 product-right">
+                    @if (Model.SearchResults != null && Model.SearchResults.Count > 0)
+                    {
+                        <div class="">
+                            <div class="col-sm-12">
+                                @foreach (var item in Model.SearchResults)
+                                {
+                                    <div class="product-right-grids" style="background-color:#e1e1e1">
+                                        <div class="product-right-top">
+                                            <div class="p-left">
+                                                <div class="p-right-img">
+                                                    @foreach (var f in item.FileDetails)
+                                                    {
+                                                        <img src="~/Images/packageImg/@(f.FileDetailsId+f.Extension)" width="100%;" height="" />
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="p-right">
+                                                <div class="col-md-6 p-right-left">
+                                                    <a href="@Url.Action("TourPackageDetails","Home", new { area="Agent", id=item.TourPackageID})">@item.TourPackageTitle</a>
+                                                    <div class="p-right-price">
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    </div>
+                                                    <p>Package short description here</p>
+                                                    <p class="p-call">+1 234 567 890</p>
+                                                </div>
+                                                <div class="col-md-6 p-right-right">
+                                                    <h6>Rating : 4.1/5</h6>
+                                                    @*<p>(123) Views</p>*@
+                                                    <span class="p-offer">@item.TourPrice.ToString("c", bdt)</span><span class="p-last-price">@item.TourPrice.ToString("c", bdt)</span>
+                                                </div>
+                                                <div class="clearfix"> </div>
+                                            </div>
+                                            <div class="clearfix"> </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+    
+                        <div class="col-sm-12 text-center">
+                            @Html.PagedListPager(Model.SearchResults, page => Url.Action("Index", new RouteValueDictionary()
+                        {
+                               { "Page", page },
+                               { "Destination", Model.Destination },
+                               { "Price", Model.Price },
+                               { "Nights", Model.Nights }
+
+                        }),
+                        PagedListRenderOptions.PageNumbersOnly)
+                        </div>
+                    }
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //container -->
+</div>
+<!-- //banner-bottom -->
+@*-----*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--show package items-->
+@*<div class="container">
+    @if (Model.SearchResults != null && Model.SearchResults.Count > 0)
+    {
+        <div class="">
+            <div class="col-sm-12">
+                @foreach (var item in Model.SearchResults)
+                {
+                    <div class="col-sm-3 text-center">
+                        @foreach(var f in item.FileDetails)
+                        {
+                            <img src="~/Images/packageImg/@(f.FileDetailsId+f.Extension)" width="100%;" />
+                        }
+
+                        <div style="padding:10px;background-color:#e4e4e4; margin-bottom:20px;">
+                            <h3>@item.TourPackageTitle</h3>
+                            <p>@item.TourPrice</p>
+                            <p>@item.TourDestination</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    
+        <div class="col-sm-12 text-center">
+            @Html.PagedListPager(Model.SearchResults, page => Url.Action("Index", new RouteValueDictionary()
+        {
+               { "Page", page },
+               { "Destination", Model.Destination },
+               { "Price", Model.Price },
+               { "Nights", Model.Nights }
+
+        }),
+        PagedListRenderOptions.PageNumbersOnly)
+        </div>
+    }
+</div>*@
+<!--show package items-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--show package items-->
+@*<div class="container">
+    @if (Model.SearchResults != null && Model.SearchResults.Count > 0)
+    {
+        <table class="table" style="width:500px;">
+            <tr>
+                <th>ID</th>
+                <th>Package Title</th>
+                <th>Destination</th>
+                <th>Price</th>
+                <th>Total Nights</th>
+            </tr>
+            @foreach (var item in Model.SearchResults)
+            {
+                <tr>
+                    <td>@item.TourPackageID</td>
+                    <td>@item.TourPackageTitle</td>
+                    <td>@item.TourDestination</td>
+                    <td>@item.TourPrice</td>
+                    <td>@item.TotalNights</td>
+                </tr>
+            }
+        </table>
+        @Html.PagedListPager(Model.SearchResults, page => Url.Action("Index", new RouteValueDictionary()
+        {
+               { "Page", page },
+               { "Destination", Model.Destination },
+               { "Price", Model.Price },
+               { "Nights", Model.Nights }
+
+        }),
+        PagedListRenderOptions.PageNumbersOnly)
+    }
+</div>*@
+<!--show package items-->

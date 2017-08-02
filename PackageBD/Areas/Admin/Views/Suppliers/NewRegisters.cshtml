@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PackageBD.Areas.Supplier.Models.SupplierInfo>
+@{
+    ViewBag.Title = "NewRegisters";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>NewRegisters</h2>
+
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Country.CountryName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
