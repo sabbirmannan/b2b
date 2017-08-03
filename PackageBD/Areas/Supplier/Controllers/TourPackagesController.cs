@@ -72,6 +72,11 @@ namespace PackageBD.Areas.Supplier.Controllers
                         file.SaveAs(path);
                     }
                 }
+
+                //compound
+          
+
+
                 tourPackage.FileDetails = fileDetails;
                 db.TourPackages.Add(tourPackage);
                 await db.SaveChangesAsync();
@@ -207,7 +212,7 @@ namespace PackageBD.Areas.Supplier.Controllers
 
 
         // GET: Supplier/TourPackages/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public async Task<ActionResult> DeletePackage(int? id)
         {
             if (id == null)
             {
@@ -222,7 +227,7 @@ namespace PackageBD.Areas.Supplier.Controllers
         }
 
         // POST: Supplier/TourPackages/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeletePackage")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
@@ -231,6 +236,7 @@ namespace PackageBD.Areas.Supplier.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {

@@ -209,7 +209,6 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\SuppliersController.cs" />
     <Compile Include="Areas\Agent\AgentAreaRegistration.cs" />
-    <Compile Include="Areas\Agent\Controllers\AgentInfoes__Controller.cs" />
     <Compile Include="Areas\Agent\Controllers\HomeController.cs" />
     <Compile Include="Areas\Agent\Controllers\HotelController.cs" />
     <Compile Include="Areas\Agent\Models\AgentInfo.cs" />
@@ -249,6 +248,10 @@
     <Compile Include="Migrations\201708021004177_v3.cs" />
     <Compile Include="Migrations\201708021004177_v3.Designer.cs">
       <DependentUpon>201708021004177_v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708031026432_v5.cs" />
+    <Compile Include="Migrations\201708031026432_v5.Designer.cs">
+      <DependentUpon>201708031026432_v5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -765,13 +768,8 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Agent\Views\Home\Index.cshtml" />
     <Content Include="Areas\Agent\Views\Hotel\SearchHotel.cshtml" />
-    <Content Include="Areas\Agent\Views\AgentInfoes__\Create.cshtml" />
-    <Content Include="Areas\Agent\Views\AgentInfoes__\Delete.cshtml" />
-    <Content Include="Areas\Agent\Views\AgentInfoes__\Details.cshtml" />
-    <Content Include="Areas\Agent\Views\AgentInfoes__\Edit.cshtml" />
-    <Content Include="Areas\Agent\Views\AgentInfoes__\Index.cshtml" />
     <Content Include="Areas\Supplier\Views\TourPackages\Create.cshtml" />
-    <Content Include="Areas\Supplier\Views\TourPackages\Delete.cshtml" />
+    <Content Include="Areas\Supplier\Views\TourPackages\DeletePackage.cshtml" />
     <Content Include="Areas\Supplier\Views\TourPackages\Details.cshtml" />
     <Content Include="Areas\Supplier\Views\TourPackages\Edit.cshtml" />
     <Content Include="Areas\Supplier\Views\TourPackages\Index.cshtml" />
@@ -991,6 +989,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708021004177_v3.resx">
       <DependentUpon>201708021004177_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708031026432_v5.resx">
+      <DependentUpon>201708031026432_v5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

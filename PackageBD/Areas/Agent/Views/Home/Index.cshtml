@@ -7,73 +7,7 @@
     CultureInfo bdt = new CultureInfo("bn-BD");
 }
 
-<div class="container">
 
-    @*@using (Html.BeginForm("Index", "Home", FormMethod.Get))
-    {
-        @Html.ValidationSummary(false)
-        <div style="border-bottom:1px solid #bbb"><h1>Search Package</h1></div>
-        <table style="border:0px; width:500px;">
-            <tr>
-                <td>
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.Destination)
-                    </div>
-
-                    <div class="editor-field">
-                        @Html.EditorFor(model => model.Destination)
-                        @Html.ValidationMessageFor(model => model.Destination)
-                    </div>
-                </td>
-                <td>
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.Nights)
-                    </div>
-
-                    <div class="editor-field">
-                        @Html.EditorFor(model => model.Nights)
-                        @Html.ValidationMessageFor(model => model.Nights)
-                    </div>
-                </td>
-                <td style="vertical-align:bottom;">
-                    <input name="SearchButton" type="submit" value="Search" />
-                </td>
-            </tr>
-        </table>
-    }*@
-
-    @*@if (Model.SearchResults != null && Model.SearchResults.Count > 0)
-    {
-        <table class="table" style="width:500px;">
-            <tr>
-                <th>ID</th>
-                <th>Package Title</th>
-                <th>Destination</th>
-                <th>Price</th>
-                <th>Total Nights</th>
-            </tr>
-            @foreach (var item in Model.SearchResults)
-            {
-                <tr>
-                    <td>@item.TourPackageID</td>
-                    <td>@item.TourPackageTitle</td>
-                    <td>@item.TourDestination</td>
-                    <td>@item.TourPrice</td>
-                    <td>@item.TotalNights</td>
-                </tr>
-            }
-        </table>
-        @Html.PagedListPager(Model.SearchResults, page => Url.Action("Index", new RouteValueDictionary()
-        {
-               { "Page", page },
-               { "Destination", Model.Destination },
-               { "Price", Model.Price },
-               { "Nights", Model.Nights }
-
-        }),
-        PagedListRenderOptions.PageNumbersOnly)
-    }*@
-</div>
 
 
 <!--design-->
@@ -339,133 +273,103 @@
 @*-----*@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--show package items-->
 @*<div class="container">
-    @if (Model.SearchResults != null && Model.SearchResults.Count > 0)
-    {
-        <div class="">
-            <div class="col-sm-12">
+
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            @Html.ValidationSummary(false)
+            <div style="border-bottom:1px solid #bbb"><h1>Search Package</h1></div>
+            <table style="border:0px; width:500px;">
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Destination)
+                        </div>
+
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Destination)
+                            @Html.ValidationMessageFor(model => model.Destination)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Nights)
+                        </div>
+
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Nights)
+                            @Html.ValidationMessageFor(model => model.Nights)
+                        </div>
+                    </td>
+                    <td style="vertical-align:bottom;">
+                        <input name="SearchButton" type="submit" value="Search" />
+                    </td>
+                </tr>
+            </table>
+        }
+
+        @if (Model.SearchResults != null && Model.SearchResults.Count > 0)
+        {
+            <table class="table" style="width:500px;">
+                <tr>
+                    <th>ID</th>
+                    <th>Package Title</th>
+                    <th>Destination</th>
+                    <th>Price</th>
+                    <th>Total Nights</th>
+                </tr>
                 @foreach (var item in Model.SearchResults)
                 {
-                    <div class="col-sm-3 text-center">
-                        @foreach(var f in item.FileDetails)
-                        {
-                            <img src="~/Images/packageImg/@(f.FileDetailsId+f.Extension)" width="100%;" />
-                        }
-
-                        <div style="padding:10px;background-color:#e4e4e4; margin-bottom:20px;">
-                            <h3>@item.TourPackageTitle</h3>
-                            <p>@item.TourPrice</p>
-                            <p>@item.TourDestination</p>
-                        </div>
-                    </div>
+                    <tr>
+                        <td>@item.TourPackageID</td>
+                        <td>@item.TourPackageTitle</td>
+                        <td>@item.TourDestination</td>
+                        <td>@item.TourPrice</td>
+                        <td>@item.TotalNights</td>
+                    </tr>
                 }
-            </div>
-        </div>
-
-    
-        <div class="col-sm-12 text-center">
+            </table>
             @Html.PagedListPager(Model.SearchResults, page => Url.Action("Index", new RouteValueDictionary()
-        {
-               { "Page", page },
-               { "Destination", Model.Destination },
-               { "Price", Model.Price },
-               { "Nights", Model.Nights }
-
-        }),
-        PagedListRenderOptions.PageNumbersOnly)
-        </div>
-    }
-</div>*@
-<!--show package items-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--show package items-->
-@*<div class="container">
-    @if (Model.SearchResults != null && Model.SearchResults.Count > 0)
-    {
-        <table class="table" style="width:500px;">
-            <tr>
-                <th>ID</th>
-                <th>Package Title</th>
-                <th>Destination</th>
-                <th>Price</th>
-                <th>Total Nights</th>
-            </tr>
-            @foreach (var item in Model.SearchResults)
             {
-                <tr>
-                    <td>@item.TourPackageID</td>
-                    <td>@item.TourPackageTitle</td>
-                    <td>@item.TourDestination</td>
-                    <td>@item.TourPrice</td>
-                    <td>@item.TotalNights</td>
-                </tr>
-            }
-        </table>
-        @Html.PagedListPager(Model.SearchResults, page => Url.Action("Index", new RouteValueDictionary()
-        {
-               { "Page", page },
-               { "Destination", Model.Destination },
-               { "Price", Model.Price },
-               { "Nights", Model.Nights }
+                   { "Page", page },
+                   { "Destination", Model.Destination },
+                   { "Price", Model.Price },
+                   { "Nights", Model.Nights }
 
-        }),
-        PagedListRenderOptions.PageNumbersOnly)
-    }
-</div>*@
+            }),
+            PagedListRenderOptions.PageNumbersOnly)
+        }
+    </div>*@@*<div class="container">
+        @if (Model.SearchResults != null && Model.SearchResults.Count > 0)
+        {
+            <table class="table" style="width:500px;">
+                <tr>
+                    <th>ID</th>
+                    <th>Package Title</th>
+                    <th>Destination</th>
+                    <th>Price</th>
+                    <th>Total Nights</th>
+                </tr>
+                @foreach (var item in Model.SearchResults)
+                {
+                    <tr>
+                        <td>@item.TourPackageID</td>
+                        <td>@item.TourPackageTitle</td>
+                        <td>@item.TourDestination</td>
+                        <td>@item.TourPrice</td>
+                        <td>@item.TotalNights</td>
+                    </tr>
+                }
+            </table>
+            @Html.PagedListPager(Model.SearchResults, page => Url.Action("Index", new RouteValueDictionary()
+            {
+                   { "Page", page },
+                   { "Destination", Model.Destination },
+                   { "Price", Model.Price },
+                   { "Nights", Model.Nights }
+
+            }),
+            PagedListRenderOptions.PageNumbersOnly)
+        }
+    </div>*@
 <!--show package items-->
